@@ -79,6 +79,6 @@ var fight = function () {
 }; // end of fight function
 
 // run fight function to start game
-// fight();
+fight();
 
 
