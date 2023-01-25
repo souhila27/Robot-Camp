@@ -1,4 +1,4 @@
-
+//begin the fight
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -44,6 +44,7 @@ var fight = function (enemyName) {
 
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
+
     console.log(
       playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
     );
@@ -83,10 +84,17 @@ var fight = function (enemyName) {
 }; // end of fight function
 
 for (var i = 0; i < enemyNames.length; i++) {
+  if (playerHealth > 0) {
+    window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+    var pickedEnemyName = enemyNames[i];
+    enemyHealth = 50;
 
-  var pickedEnemyName = enemyNames[i];
-  enemyHealth = 50;
-
+    
+  }
+  else {
+    window.alert("You have lost your robot in battle! Game Over!");
+    break;
+  }
   fight(pickedEnemyName);
 };
 
